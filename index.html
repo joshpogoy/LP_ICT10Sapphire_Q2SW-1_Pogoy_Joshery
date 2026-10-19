@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            color: #174b49;
+            background: radial-gradient(circle at top, #fff9df, #eee2b8 58%, #d8c891);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        header { padding: 28px 20px; text-align: center; }
+
+        header p {
+            margin: 0;
+            color: #086c67;
+            font: 800 clamp(1.4rem, 4vw, 2.2rem) 'Orbitron', sans-serif;
+            letter-spacing: 0.06em;
+            text-shadow: 0 0 18px #d9aa3e66;
+        }
+
+        main {
+            width: min(440px, calc(100% - 32px));
+            margin: 24px auto;
+            padding: 34px;
+            border: 1px solid #c99b3b;
+            border-radius: 18px;
+            background: #fffdf2ed;
+            box-shadow: 0 18px 50px #57432730, inset 0 1px #ffffff;
+        }
+
+        form { display: grid; gap: 14px; }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #9ebbb0;
+            border-radius: 9px;
+            outline: none;
+            color: #174b49;
+            background: #f8f4df;
+            font: 600 1.05rem 'Rajdhani', sans-serif;
+        }
+
+        input[type="text"]::placeholder { color: #718d83; }
+
+        input[type="text"]:focus {
+            border-color: #08766e;
+            box-shadow: 0 0 0 3px #08766e2b;
+        }
+
+        input[type="button"] {
+            padding: 13px;
+            border: 0;
+            border-radius: 9px;
+            color: #174b49;
+            background: linear-gradient(100deg, #e9bd53, #f5dc78);
+            cursor: pointer;
+            font: 800 1rem 'Orbitron', sans-serif;
+            letter-spacing: 0.08em;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        input[type="button"]:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+        #result { margin-top: 22px; color: #08766e; font-size: 1.15rem; text-align: center; }
+
+        footer { margin-top: auto; padding: 20px 12px; color: #765c22; text-align: center; }
+        footer span { color: #086c67; font-weight: 600; }
+    </style>
+
+    <title>Q2 Seatwork 1</title>
+</head>
+
+<body>
+    <header>
+        <p>Varsity Member Checker</p>
+    </header>
+
+    <main>
+        <form>
+            <input type="text" id="first_name" placeholder="Enter your first name"><br>
+            <input type="text" id="last_name" placeholder="Enter your last name"><br>
+            <input type="button" py-click="candidate_checker" value="Enter">
+        </form>
+        <div id="result"></div>
+    </main>
+
+    <footer>&copy; 2026 <span>Varsity Club</span> &bull; Seatwork 1 &bull; 2nd Quarter</footer> 
+    <py-script src="main.py"></py-script>
+</body>
+</html>
